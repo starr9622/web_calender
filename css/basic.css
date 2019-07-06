@@ -1,0 +1,13 @@
+body {
+    min-width: 800px;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.hidenClass{
+    display: none;
+}
