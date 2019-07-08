@@ -1,3 +1,6 @@
+td{
+    position: relative;
+}
 .calenderTable{
     width: 100%;
     border-collapse:collapse;
@@ -35,6 +38,22 @@
 {
     color: blue;
 }
+.tableColoring th:nth-child(2)
+{
+    color: red;
+}
+.tableColoring th:last-child
+{
+    color: blue;
+}
+.sunday
+{
+    color: red !important;
+}
+.satday
+{
+    color: blue !important;
+}
 .calenderTable td:last-child
 {
     color: blue;
@@ -68,14 +87,14 @@
     background-color: #ececec;
     padding: 1rem;
 }
-.weeklyTable th:nth-child(2)
-{
-    color: red;
-}
-.weeklyTable th:last-child
-{
-    color: blue;
-}
 .dailyTable td:first-child{
     width: 10%;
+}
+.calendarMemo{
+    height: 30px;
+    width: 100%;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    box-sizing: border-box;
+    margin-bottom: 0.2rem;
 }

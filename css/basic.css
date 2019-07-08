@@ -11,3 +11,18 @@ body {
 .hidenClass{
     display: none;
 }
+.bg_c_1{
+    background-color: red;
+}
+.bg_c_2{
+    background-color: blue;
+}
+.bg_c_3{
+    background-color: green;
+}
+.bg_c_4{
+    background-color: yellow;
+}
+.bg_c_5{
+    background-color: navy;
+}

@@ -1,19 +1,33 @@
+let weekTitle = ['일', '월', '화', '수', '목', '금', '토'];
 function dayschedule(){
-    var today = ['일 1'];
+    var today = [ weekTitle[moment(selectWeek).weekday()]+" "+moment(selectWeek).format('DD')];
     makerow(false, today, '');
-    makerow(true, [' '], '1 시');
+    for(var h = 0; h <= 23; h++){
+        makerow(true, [' '], h+'시', 'day');
+    }
 }
 
 function weekschedule(){
-    var title = ['일 1', '월 2', '화 3', '수 4', '목 5', '금 6', '토 7'];
+    var title = 
+    [
+        weekTitle[0]+' '+moment(selectWeek).weekday(0).format('DD'), 
+        weekTitle[1]+' '+moment(selectWeek).weekday(1).format('DD'),
+        weekTitle[2]+' '+moment(selectWeek).weekday(2).format('DD'), 
+        weekTitle[3]+' '+moment(selectWeek).weekday(3).format('DD'), 
+        weekTitle[4]+' '+moment(selectWeek).weekday(4).format('DD'), 
+        weekTitle[5]+' '+moment(selectWeek).weekday(5).format('DD'),
+        weekTitle[6]+' '+moment(selectWeek).weekday(6).format('DD'),
+    ];
     makerow(false, title, '');
-    makerow(true, [1,2,3,4,5,6,7],'1시');
+
+    for(var h = 0; h <= 23; h++){
+        makerow(true, ['','','','','','',''], h+'시', 'week');
+    }
 }
 
 function monthschedule(){
-    var title = ['일', '월', '화', '수', '목', '금', '토'];
-    makerow(false, title, null);
-    
+    makerow(false, weekTitle, null);
+
     let startDate = moment().format(selectMonth+'-01');
     let endDate = moment(startDate).endOf('month').format('DD');
 
@@ -37,7 +51,7 @@ function monthschedule(){
     }
 }
 
-function makerow(content, array, flag){
+function makerow(content, array, flag, key){
     var tableItem = content ? document.querySelector(".calenderInfo") : document.querySelector(".calenderHeadInfo");
 
     var row = document.createElement('tr');
@@ -51,9 +65,36 @@ function makerow(content, array, flag){
     for(let i = 0 ; i < array.length; i++){
         var item = content ? document.createElement('td') : document.createElement('th');
         item.innerHTML = array[i];
+        //monthly
         if(content 
             && moment(moment().format(selectMonth+'-'+array[i])).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
             item.classList.add('today');
+        }
+        //weekly
+        if(key && moment(moment(selectWeek).weekday(i)).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+            item.classList.add('today');
+        }
+        //색상값 적용
+        if(moment(selectWeek).weekday() == 0){
+            item.classList.add('sunday');
+        }
+        if(moment(selectWeek).weekday() == 6){
+            item.classList.add('satday');
+        }
+        //메모가 있을 경우
+        if(false){
+            var div = document.createElement('div');
+            div.innerHTML="메모"
+            div.classList.add('calendarMemo')
+            div.classList.add('bg_c_1')
+
+            var div1 = document.createElement('div');
+            div1.innerHTML="메모1"
+            div1.classList.add('calendarMemo')
+            div1.classList.add('bg_c_2')
+            
+            item.appendChild(div);
+            item.appendChild(div1);
         }
         row.appendChild(item);   
     }
@@ -62,9 +103,8 @@ function makerow(content, array, flag){
 }
 
 function clearElement(){
-    var tbody = document.querySelectorAll(".calenderInfo tr").forEach(e => e.parentNode.removeChild(e));
-    var thead = document.querySelector(".calenderHeadInfo tr");
-    thead.remove();
+    document.querySelectorAll(".calenderInfo tr").forEach(e => e.parentNode.removeChild(e));
+    document.querySelector(".calenderHeadInfo tr").remove();
 }
 
 $(function(){
