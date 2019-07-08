@@ -3,10 +3,10 @@
     border-collapse:collapse;
     table-layout: fixed;
 }
-.calenderTable tr:first-child{
+.calenderTable thead tr{
     height: 50px;
 }
-.calenderTable tr{
+.calenderTable tbody tr{
     height: 17vh;
     border-bottom: 1px solid #dfdfdf; 
 }
