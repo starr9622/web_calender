@@ -71,7 +71,11 @@ function makerow(content, array, flag, key){
             item.classList.add('today');
         }
         //weekly
-        if(key && moment(moment(selectWeek).weekday(i)).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+        if(key =="week" && moment(moment(selectWeek).weekday(i)).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+            item.classList.add('today');
+        }
+        //daily
+        if(key =="day" && moment().format("YYYY-MM-DD") == selectWeek){
             item.classList.add('today');
         }
         //색상값 적용
