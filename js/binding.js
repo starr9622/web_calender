@@ -1,4 +1,3 @@
-let weekTitle = ['일', '월', '화', '수', '목', '금', '토'];
 function dayschedule(){
     var today = [ weekTitle[moment(selectWeek).weekday()]+" "+moment(selectWeek).format('DD')];
     makerow(false, today, '');
