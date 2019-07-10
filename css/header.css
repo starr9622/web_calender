@@ -1,18 +1,19 @@
 header {
-    font-size: 1.1rem;
-    display: flex;
-    padding-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  padding-bottom: 1rem;
 }
-header > section:nth-child(2){
-    margin: auto;
+header > section:nth-child(2) {
+  margin: auto;
 }
-button{
-    border: 1px solid #dfdfdf;
-    background-color: #ffffff; 
-    border-radius: 2px;
+button {
+  border: 1px solid #dfdfdf;
+  background-color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
-.seleteBtn{
-    background-color: #ececec;
-    color: #212121;
-    font-weight: bold;
+.seleteBtn {
+  background-color: #ececec;
+  color: #212121;
+  font-weight: bold;
 }

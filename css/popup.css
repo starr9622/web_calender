@@ -43,6 +43,7 @@
   right: 0;
   top: 0;
   padding: 0.9rem;
+  cursor: pointer;
 }
 .inputForm {
   padding: 1rem;

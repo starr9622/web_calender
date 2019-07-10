@@ -6,12 +6,13 @@ if (temp[1]) {
   tabIndex = data[1];
 }
 
+const memobgc = ["bg_c_1", "bg_c_2", "bg_c_3", "bg_c_4", "bg_c_5"];
+
 let selectMonth = moment().format("YYYY-MM");
 let selectWeek = moment().format("YYYY-MM-DD");
 let keylist = [];
 let memoItems = [];
 let weekTitle = ["일", "월", "화", "수", "목", "금", "토"];
-const memobgc = ["bg_c_1", "bg_c_2", "bg_c_3", "bg_c_4", "bg_c_5"];
 let selectMemoIndex = 0;
 
 $(document).ready(function() {
