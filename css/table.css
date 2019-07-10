@@ -1,100 +1,93 @@
-td{
-    position: relative;
+td {
+  position: relative;
 }
-.calenderTable{
-    width: 100%;
-    border-collapse:collapse;
-    table-layout: fixed;
+.calenderTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
-.calenderTable thead tr{
-    height: 50px;
+.calenderTable thead tr {
+  height: 50px;
 }
-.calenderTable tbody tr{
-    height: 17vh;
-    border-bottom: 1px solid #dfdfdf; 
+.calenderTable tbody tr {
+  height: 17vh;
+  border-bottom: 1px solid #dfdfdf;
+  overflow: auto;
 }
-.calenderTable td{
-    border-right: 1px solid #dfdfdf;
-    padding: 1rem;
-    max-width: 17%;
-    vertical-align: top;
+.calenderTable td {
+  border-right: 1px solid #dfdfdf;
+  padding: 1rem;
+  max-width: 17%;
+  vertical-align: top;
 }
 .calenderTable th {
-    color: #212121;
-    font-weight: bold;
-    text-align: left;
-    background-color: #ececec;
-    padding: 1rem;
+  color: #212121;
+  font-weight: bold;
+  text-align: left;
+  background-color: #ececec;
+  padding: 1rem;
 }
-.calenderTable th:first-child
-{
-    color: red;
+.calenderTable th:first-child {
+  color: red;
 }
-.calenderTable td:first-child
-{
-    color: red;
+.calenderTable td:first-child {
+  color: red;
 }
-.calenderTable th:last-child
-{
-    color: blue;
+.calenderTable th:last-child {
+  color: blue;
 }
-.tableColoring th:nth-child(2)
-{
-    color: red;
+.tableColoring th:nth-child(2) {
+  color: red;
 }
-.tableColoring th:last-child
-{
-    color: blue;
+.tableColoring th:last-child {
+  color: blue;
 }
-.sunday
-{
-    color: red !important;
+.sunday {
+  color: red !important;
 }
-.satday
-{
-    color: blue !important;
+.satday {
+  color: blue !important;
 }
-.calenderTable td:last-child
-{
-    color: blue;
-    border: 0;
+.calenderTable td:last-child {
+  color: blue;
+  border: 0;
 }
-.today{
-    background-color: rgba(252, 108, 133, 0.4);
-    font-weight: bold;
+.today {
+  background-color: rgba(252, 108, 133, 0.4);
+  font-weight: bold;
 }
-.weeklyTable{
-    width: 100%;
-    border-collapse:collapse;
-    table-layout: fixed;
+.weeklyTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
-.weeklyTable tr:first-child{
-    height: 50px;
+.weeklyTable tr:first-child {
+  height: 50px;
 }
-.weeklyTable tr{
-    border-bottom: 1px solid #dfdfdf; 
+.weeklyTable tr {
+  border-bottom: 1px solid #dfdfdf;
 }
-.weeklyTable td{
-    border-right: 1px solid #dfdfdf;
-    padding: 1rem;
-    max-width: 17%;
-    vertical-align: top;
+.weeklyTable td {
+  border-right: 1px solid #dfdfdf;
+  padding: 1rem;
+  max-width: 17%;
+  vertical-align: top;
 }
 .weeklyTable th {
-    color: #212121;
-    font-weight: bold;
-    text-align: left;
-    background-color: #ececec;
-    padding: 1rem;
+  color: #212121;
+  font-weight: bold;
+  text-align: left;
+  background-color: #ececec;
+  padding: 1rem;
 }
-.dailyTable td:first-child{
-    width: 10%;
+.dailyTable td:first-child {
+  width: 10%;
 }
-.calendarMemo{
-    height: 30px;
-    width: 100%;
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    box-sizing: border-box;
-    margin-bottom: 0.2rem;
+.calendarMemo {
+  height: 30px;
+  width: 100%;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: 0.2rem;
 }

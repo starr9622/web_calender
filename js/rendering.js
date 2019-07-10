@@ -1,41 +1,43 @@
 let temp = location.href.split("?");
-var tabIndex = 2;
+let tabIndex = 2;
 
-if(temp[1]){
-    data=temp[1].split("=");
-    tabIndex = data[1];
+if (temp[1]) {
+  data = temp[1].split("=");
+  tabIndex = data[1];
 }
 
-var selectMonth = moment().format('YYYY-MM');
-var selectWeek = moment().format('YYYY-MM-DD');
-var memoItems = [];
-let weekTitle = ['일', '월', '화', '수', '목', '금', '토'];
+let selectMonth = moment().format("YYYY-MM");
+let selectWeek = moment().format("YYYY-MM-DD");
+let keylist = [];
+let memoItems = [];
+let weekTitle = ["일", "월", "화", "수", "목", "금", "토"];
+const memobgc = ["bg_c_1", "bg_c_2", "bg_c_3", "bg_c_4", "bg_c_5"];
+let selectMemoIndex = 0;
 
-$(document).ready(function () {
-    var today = moment().format('YYYY.MM.DD');
-    document.querySelector("#today").innerHTML = today;
-    document.querySelector("#selectMonth").innerHTML = selectMonth;
+$(document).ready(function() {
+  let today = moment().format("YYYY.MM.DD");
+  document.querySelector("#today").innerHTML = today;
+  document.querySelector("#selectMonth").innerHTML = selectMonth;
 
-    fetchScheduleList();
+  fetchScheduleList();
 
-    switch(tabIndex){
-        case '0' :
-            $(".calenderWrap table").addClass('weeklyTable dailyTable');
-            $(".dayBtn").addClass('seleteBtn');
-            $("#selectMonth").hide();
-            dayschedule()
-            break;
-        case '1' :
-            $(".calenderWrap table").addClass('weeklyTable tableColoring');
-            $(".weekBtn").addClass('seleteBtn');
-            $("#selectMonth").hide();
-            weekschedule();
-            break;
-        default :
-            $(".calenderWrap table").addClass('calenderTable');
-            $(".monthBtn").addClass('seleteBtn');
-            $("#selectMonth").show();
-            monthschedule();
-    }
-
+  switch (tabIndex) {
+    case "0":
+      $(".calenderWrap table").addClass("weeklyTable dailyTable");
+      $(".dayBtn").addClass("seleteBtn");
+      $("#selectMonth").hide();
+      dayschedule();
+      break;
+    case "1":
+      $(".calenderWrap table").addClass("weeklyTable tableColoring");
+      $(".weekBtn").addClass("seleteBtn");
+      $("#selectMonth").hide();
+      weekschedule();
+      break;
+    default:
+      $(".calenderWrap table").addClass("calenderTable");
+      $(".monthBtn").addClass("seleteBtn");
+      $("#selectMonth").show();
+      monthschedule();
+  }
 });

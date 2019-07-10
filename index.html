@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>웹 달력 구현</title>
 
     <script language="JavaScript" src="./library/jquery-3.4.1.min.js"></script>
@@ -15,69 +15,122 @@
     <script language="JavaScript" src="./js/popup.js"></script>
     <script language="JavaScript" src="./js/binding.js"></script>
 
-    <style type="text/css"> @import url("./css/basic.css"); </style>
-    <style type="text/css"> @import url("./css/header.css"); </style>
-    <style type="text/css"> @import url("./css/table.css"); </style>
-    <style type="text/css"> @import url("./css/popup.css"); </style>
-</head>
-<body>
+    <style type="text/css">
+      @import url("./css/basic.css");
+    </style>
+    <style type="text/css">
+      @import url("./css/header.css");
+    </style>
+    <style type="text/css">
+      @import url("./css/table.css");
+    </style>
+    <style type="text/css">
+      @import url("./css/popup.css");
+    </style>
+  </head>
+  <body>
     <header>
-        <section>
-            <label id="today"></label>
-            <button onclick="prebtnAction()"><</button>
-            <button onclick="nextbtnAction()">></button>
-            <button onclick="todayAction()">오늘</button>
-        </section>
-    
-        <section>
-            <button class="dayBtn" onclick="location.replace('index.html?viewType=0')">일간</button>
-            <button class="weekBtn" onclick="location.replace('index.html?viewType=1')">주간</button>
-            <button class="monthBtn" onclick="location.replace('index.html?viewType=2')">월간</button>
-        </section>
-    
-        <section>
-            <button onclick="openPopup()">일정추가</button>
-        </section>
+      <section>
+        <label id="today"></label>
+        <button onclick="prebtnAction()"><</button>
+        <button onclick="nextbtnAction()">></button>
+        <button onclick="todayAction()">오늘</button>
+      </section>
+
+      <section>
+        <button
+          class="dayBtn"
+          onclick="location.replace('index.html?viewType=0')"
+        >
+          일간
+        </button>
+        <button
+          class="weekBtn"
+          onclick="location.replace('index.html?viewType=1')"
+        >
+          주간
+        </button>
+        <button
+          class="monthBtn"
+          onclick="location.replace('index.html?viewType=2')"
+        >
+          월간
+        </button>
+      </section>
+
+      <section>
+        <button onclick="openPopup()">일정추가</button>
+      </section>
     </header>
     <div class="calenderWrap">
-        <h3 id="selectMonth" style="text-align: center;"></h3>
-        <table>
-            <thead class="calenderHeadInfo">
-            </thead>
-            <tbody class="calenderInfo">
-            </tbody>
-        </table>
+      <h3 id="selectMonth" style="text-align: center;"></h3>
+      <table>
+        <thead class="calenderHeadInfo"></thead>
+        <tbody class="calenderInfo"></tbody>
+      </table>
     </div>
     <div class="popupWrap hidenClass">
-        <div class="popupContainer">
-            <div class="popupInner">
-                <article>
-                    <label>일정추가</label>
-                    <img src="./icon/close.png" alt="popupclose" onclick="closeAction()">
-                </article>
-                <div class="inputForm">
-                    <section>
-                        <label for="title">제목</label>
-                        <input type="text" id="title" placeholder="일정을 입력 해주세요.">
-                    </section>
-                    <section>
-                        <label for="startday">시작일시</label>
-                        <input type="datetime-local" id="startday" placeholder="일정 시작일을 선택 해주세요.">
-                    </section>    
-                    <section>
-                        <label for="endday">종료일시</label>
-                        <input type="datetime-local" id="endday" placeholder="일정 종료일을 선택 해주세요.">
-                    </section>    
-                    <section>
-                        <label for="content">메모</label>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="일정 내용을 입력해주세요."></textarea>
-                    </section>    
-                </div>
-                <div class="popupBtnWrap">
-                    <button onclick="saveMemoAction()">저장</button>
-                </div>
-            </div>
+      <div class="popupContainer">
+        <div class="popupInner">
+          <article>
+            <label id="popupTitle"></label>
+            <img
+              src="./icon/close.png"
+              alt="popupclose"
+              onclick="closeAction()"
+            />
+          </article>
+          <div class="inputForm">
+            <section>
+              <label for="title">제목</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="일정을 입력 해주세요."
+              />
+            </section>
+            <section>
+              <label for="startday">시작일시</label>
+              <input
+                type="datetime-local"
+                id="startday"
+                placeholder="일정 시작일을 선택 해주세요."
+              />
+            </section>
+            <section>
+              <label for="endday">종료일시</label>
+              <input
+                type="datetime-local"
+                id="endday"
+                placeholder="일정 종료일을 선택 해주세요."
+              />
+            </section>
+            <section>
+              <label for="content">메모</label>
+              <textarea
+                name="content"
+                id="content"
+                cols="30"
+                rows="10"
+                placeholder="일정 내용을 입력해주세요."
+              ></textarea>
+            </section>
+          </div>
+          <div class="popupBtnWrap">
+            <button id="btnRemove" onclick="removeMemoAction()">삭제</button>
+            <button
+              id="btnModify"
+              class="btndefault"
+              onclick="modifyMemoAction()"
+            >
+              수정
+            </button>
+            <button id="btnSave" class="btndefault" onclick="saveMemoAction()">
+              저장
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

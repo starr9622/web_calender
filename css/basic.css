@@ -1,28 +1,28 @@
 body {
-    min-width: 800px;
-    width: 100%;
-    overflow: auto;
-    position: relative;
-    height: 100vh;
-    margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
+  min-width: 800px;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
 }
-.hidenClass{
-    display: none;
+.hidenClass {
+  display: none;
 }
-.bg_c_1{
-    background-color: red;
+.bg_c_1 {
+  background-color: #f88977;
 }
-.bg_c_2{
-    background-color: blue;
+.bg_c_2 {
+  background-color: #d9686a;
 }
-.bg_c_3{
-    background-color: green;
+.bg_c_3 {
+  background-color: #ef7fb8;
 }
-.bg_c_4{
-    background-color: yellow;
+.bg_c_4 {
+  background-color: #d868d9;
 }
-.bg_c_5{
-    background-color: navy;
+.bg_c_5 {
+  background-color: #d477f8;
 }
